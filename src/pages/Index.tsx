@@ -52,11 +52,11 @@ const Index = () => {
           {activeSection === "analytics" && <MetricsDashboard />}
           {activeSection === "security" && <SecureLoginPanel />}
 
-          {(activeSection === "directory" || activeSection === "settings") && (
+          {activeSection === "directory" && <EmployeeDirectory />}
+
+          {activeSection === "settings" && (
             <div className="flex items-center justify-center h-64 rounded-xl border border-border bg-card">
-              <p className="text-muted-foreground text-sm">
-                {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} — Coming Soon
-              </p>
+              <p className="text-muted-foreground text-sm">Settings — Coming Soon</p>
             </div>
           )}
         </main>
