@@ -21,27 +21,43 @@ const Index = () => {
             <p className="text-sm text-sidebar-foreground/70 mt-1">Welcome to the NHLS Employee Intranet — your centralised hub for documents, communications, and lab operations.</p>
           </div>
 
-          <MetricsDashboard />
-          <DocumentControlCenter />
-          <NewsFeedAndEvents />
-
-          {/* Security Panel */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <SecureLoginPanel />
-            <div className="nhls-gradient rounded-xl p-6 flex flex-col justify-center">
-              <h3 className="font-display font-bold text-sidebar-primary-foreground text-lg">Easy Content Management</h3>
-              <p className="text-sm text-sidebar-foreground/70 mt-2 leading-relaxed">
-                Upload reports, update news articles, and manage documents — no coding required. 
-                Our SharePoint-integrated CMS empowers every staff member to contribute content 
-                through intuitive drag-and-drop interfaces and guided workflows.
-              </p>
-              <div className="flex gap-3 mt-4">
-                <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Drag & Drop Upload</span>
-                <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Approval Workflows</span>
-                <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Version Control</span>
+          {activeSection === "dashboard" && (
+            <>
+              <MetricsDashboard />
+              <DocumentControlCenter />
+              <NewsFeedAndEvents />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <SecureLoginPanel />
+                <div className="nhls-gradient rounded-xl p-6 flex flex-col justify-center">
+                  <h3 className="font-display font-bold text-sidebar-primary-foreground text-lg">Easy Content Management</h3>
+                  <p className="text-sm text-sidebar-foreground/70 mt-2 leading-relaxed">
+                    Upload reports, update news articles, and manage documents — no coding required.
+                    Our SharePoint-integrated CMS empowers every staff member to contribute content
+                    through intuitive drag-and-drop interfaces and guided workflows.
+                  </p>
+                  <div className="flex gap-3 mt-4">
+                    <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Drag & Drop Upload</span>
+                    <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Approval Workflows</span>
+                    <span className="text-[10px] bg-sidebar-accent text-sidebar-accent-foreground px-3 py-1.5 rounded-full font-medium">Version Control</span>
+                  </div>
+                </div>
               </div>
+            </>
+          )}
+
+          {activeSection === "documents" && <DocumentControlCenter />}
+          {activeSection === "news" && <NewsFeedAndEvents />}
+          {activeSection === "events" && <NewsFeedAndEvents />}
+          {activeSection === "analytics" && <MetricsDashboard />}
+          {activeSection === "security" && <SecureLoginPanel />}
+
+          {(activeSection === "directory" || activeSection === "settings") && (
+            <div className="flex items-center justify-center h-64 rounded-xl border border-border bg-card">
+              <p className="text-muted-foreground text-sm">
+                {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} — Coming Soon
+              </p>
             </div>
-          </div>
+          )}
         </main>
       </div>
     </div>
