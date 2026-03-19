@@ -6,6 +6,7 @@ import { DocumentControlCenter } from "@/components/DocumentControlCenter";
 import { NewsFeedAndEvents } from "@/components/NewsFeedAndEvents";
 import { SecureLoginPanel } from "@/components/SecureLoginPanel";
 import { EmployeeDirectory } from "@/components/EmployeeDirectory";
+import { SettingsPanel } from "@/components/SettingsPanel";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
