@@ -55,11 +55,7 @@ const Index = () => {
 
           {activeSection === "directory" && <EmployeeDirectory />}
 
-          {activeSection === "settings" && (
-            <div className="flex items-center justify-center h-64 rounded-xl border border-border bg-card">
-              <p className="text-muted-foreground text-sm">Settings — Coming Soon</p>
-            </div>
-          )}
+          {activeSection === "settings" && <SettingsPanel />}
         </main>
       </div>
     </div>
