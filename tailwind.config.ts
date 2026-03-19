@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Source Sans 3', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +60,16 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        nhls: {
+          navy: "hsl(var(--nhls-navy))",
+          "navy-light": "hsl(var(--nhls-navy-light))",
+          teal: "hsl(var(--nhls-teal))",
+          "teal-light": "hsl(var(--nhls-teal-light))",
+          gold: "hsl(var(--nhls-gold))",
+          green: "hsl(var(--nhls-green))",
+          red: "hsl(var(--nhls-red))",
+          blue: "hsl(var(--nhls-blue))",
         },
       },
       borderRadius: {
