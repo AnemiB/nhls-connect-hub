@@ -5,6 +5,7 @@ import { MetricsDashboard } from "@/components/MetricsDashboard";
 import { DocumentControlCenter } from "@/components/DocumentControlCenter";
 import { NewsFeedAndEvents } from "@/components/NewsFeedAndEvents";
 import { SecureLoginPanel } from "@/components/SecureLoginPanel";
+import { EmployeeDirectory } from "@/components/EmployeeDirectory";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
